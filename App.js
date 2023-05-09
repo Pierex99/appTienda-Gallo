@@ -27,10 +27,11 @@ export default function App() {
     setModalVisible(true)
   }
 
-  const onHandleDelete = id => {
+  const onHandleDelete = item => {
     console.log("eliminar este item", item)
     setList(prevState => 
-      prevState.filter(element => element !== item.name))
+      prevState.filter(element => element.name !== item.name))
+      
     setModalVisible(false)
   }
 
