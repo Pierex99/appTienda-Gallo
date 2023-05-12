@@ -44,5 +44,6 @@ const styles = StyleSheet.create({
     },
     modalTextStyle: {
         fontSize: 30,
+        fontFamily: "FiraSansBold",
     },
 });
