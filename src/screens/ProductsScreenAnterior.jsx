@@ -1,8 +1,8 @@
 import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
-import Modal from '../../components/Modal'
+import Modal from '../components/Modal'
 
-const index = ({ onItemListScreen }) => {
+const ProductsScreenAnterior = ({ onItemListScreen }) => {
 
     const [textItem, setTextItem] = useState("")
     const [list, setList] = useState([])
@@ -81,7 +81,7 @@ const index = ({ onItemListScreen }) => {
     )
 }
 
-export default index
+export default ProductsScreenAnterior
 
 const styles = StyleSheet.create({
     buttonContainer: {

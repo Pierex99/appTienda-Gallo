@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 
-import ItemListScreen from "./src/screens/ItemListScreen"
+import ItemListScreen from "./src/screens/ProductsScreen"
 import CartScreen from "./src/screens/CartScreen"
 import { useFonts } from 'expo-font';
+import ShopNavigator from './src/navigation/ShopNavigator';
 
 export default function App() {
 
@@ -29,7 +30,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {content}
+      {/*{content}*/}
+      <ShopNavigator/>
     </View>
 
   );
