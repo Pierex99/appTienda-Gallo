@@ -1,12 +1,29 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { useState } from 'react';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
-import ItemListScreen from "./src/screens/ProductsScreen"
-import CartScreen from "./src/screens/CartScreen"
 import { useFonts } from 'expo-font';
-import ShopNavigator from './src/navigation/ShopNavigator';
+import { useEffect, useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 
 export default function App() {
+
+  const [isPortrait, setIsPortrait] = useState(true)
+
+  const statePortrait = () => setIsPortrait(onPortrait)
+
+  const onPortrait = () => {
+    const dim = Dimensions.get("screen")
+    return dim.height > dim.width
+  }
+
+  console.log(isPortrait);
+
+  useEffect(() => {
+    Dimensions.addEventListener('change', statePortrait)
+    return () => {
+      Dimensions.removeEventListener('change', statePortrait)
+    }
+  }, [])
 
   const [loaded] = useFonts({
     "FiraSansBold": require('./src/assets/fonts/FiraSans-Bold.ttf'),
@@ -15,25 +32,10 @@ export default function App() {
 
   //if (!loaded) return null
 
-  const [cartScreenSelected, setCartScreenSelected] = useState(false)
-
-  const handleItemListScreen = () => {
-    setCartScreenSelected(true)
-  }
-
-  //este es el condicional del cambio de pantallas  => implementarlo en mi app
-  let content = <ItemListScreen onItemListScreen={handleItemListScreen} />;
-
-  if (cartScreenSelected) {
-    content = <CartScreen />;
-  }
-
   return (
-    <View style={styles.container}>
-      {/*{content}*/}
-      <ShopNavigator/>
-    </View>
-
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
 }
 

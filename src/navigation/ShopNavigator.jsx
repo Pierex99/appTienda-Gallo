@@ -10,36 +10,40 @@ import CategoriesScreen from '../screens/CategoriesScreen'
 const ShopNavigator = () => {
     const Stack = createNativeStackNavigator()
     return (
-        <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName='Home'
-                screenOptions={{
-                    headerStyle: {
-                        backgroundColor: COLORS.primary,
-                    },
-                    headerTintColor: COLORS.quaternary,
-                    headerTitleStyle: {
-                        fontWeight: "bold",
-                    },
+        <Stack.Navigator
+            initialRouteName='Home'
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: COLORS.primary,
+                },
+                headerTintColor: COLORS.quaternary,
+                headerTitleStyle: {
+                    fontWeight: "bold",
+                },
+            }}
+        >
+            <Stack.Screen
+                name="Home"
+                component={CategoriesScreen}
+                options={{
+                    title: "Categories",
                 }}
-            >
-                <Stack.Screen
-                    name="Home"
-                    component={CategoriesScreen}
-                    options={{
-                        title: "Categories",
-                    }}
-                />
-                <Stack.Screen
-                    name="Products"
-                    component={ProductsScreen}
-                    options={({ route }) => ({
-                        title: route.params.name
-                    })} 
-                />
-                <Stack.Screen name="Details" component={DetailsScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
+            />
+            <Stack.Screen
+                name="Products"
+                component={ProductsScreen}
+                options={({ route }) => ({
+                    title: route.params.name
+                })}
+            />
+            <Stack.Screen
+                name="Details"
+                component={DetailsScreen}
+                options={({ route }) => ({
+                    title: route.params.name
+                })}
+            />
+        </Stack.Navigator>
     )
 }
 

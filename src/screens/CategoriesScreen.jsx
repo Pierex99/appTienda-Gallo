@@ -13,7 +13,7 @@ const CategoriesScreen = ({ navigation }) => {
     }
 
     const renderCategoriesItem = ({ item }) => (
-        <View>
+        <View style={styles.categoriesContainer}>
             <CategoriesItem item={item} onSelected={handleSelectedCategory} />
         </View>
     )
@@ -40,6 +40,6 @@ const styles = StyleSheet.create({
     },
     categoriesContainer: {
         padding: 15,
-        height: 500,
+        height: 150,
     }
 })

@@ -28,7 +28,15 @@ export const PRODUCTS = [
         category: '1',
         name: "Camiseta PSG 23/24 Visita",
         description: "Camiseta Visitante de Paris Saint Germain de la temporada 23/24",
-        color: 'blanco',
+        color: 'azul',
         price: 18,
+    },
+    {
+        id: "5",
+        category: '3',
+        name: "Guantes Arquero Nike Blancos",
+        description: "Guantes de arquero marca Nike de color blanco",
+        color: 'blanco',
+        price: 10,
     },
 ]
