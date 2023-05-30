@@ -9,6 +9,14 @@ const styles = StyleSheet.create({
         margin: 10,
         borderColor: '#ccc',
         borderWidth: 1,
-        //border
+        borderRadius: 6,
+    },
+    date: {
+        fontSize: 18,
+    },
+    total: {
+        fontSize: 18,
     }
 })
+
+export default styles;

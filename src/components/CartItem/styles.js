@@ -7,6 +7,16 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: "#ccc"
     },
+    header: {
+        fontSize: 18,
+    },
+    detail: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    }
 })
 
 export default styles;

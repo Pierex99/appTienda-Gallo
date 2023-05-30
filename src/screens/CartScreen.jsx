@@ -14,8 +14,8 @@ const CartScreen = () => {
     )
 
     return (
-        <View>
-            <View style={styles.container}>
+        <View style={styles.container}>
+            <View style={styles.list}>
                 <FlatList
                     data={CART}
                     keyExtractor={item => item.id}
@@ -31,7 +31,6 @@ const CartScreen = () => {
                             <Text style={styles.priceText}>Total: $100</Text>
                         </View>
                     </TouchableOpacity>
-
                 </View>
             </View>
         </View>
@@ -62,7 +61,10 @@ const styles = StyleSheet.create({
         padding: 10, 
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'space-between'
+    },
+    priceText: {
+        fontSize: 18,
     },
     buttonContainer: {
         paddingHorizontal: 40,
